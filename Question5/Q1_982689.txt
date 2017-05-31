@@ -1,0 +1,30 @@
+A JSON object is a key-value pair data structure that is enclosed within { }. A sample JSON object would look like
+{
+ "key1":"value1",
+ "key2":"value2",
+ "key3": { 
+     "key4":"value4",
+     "key5":"value5"}
+ "key6":"value6",
+ "key7":[
+    {
+      "key8":"value8"
+    }]
+}
+Given a JSON object, ignore the literal values of the object and check whether the distinguishing characters and notation of the object are valid to determine if the JSON object is valid or not.
+
+Note:
+1. Key3 points to another JSON object (Concept of nesting of JSON objects).
+2. Key7 points to an array of JSON objects. 
+
+Rules:
+1. A JSON object starts with '{' and ends with a '}'.
+2. The key and value are separated by a ':'.
+3. A ',' suggests an additional JSON property.
+4. An array only consists of JSON objects. It cannot contain a "key":"value" pair by itself.
+
+Example:
+Valid object - {:,:,:,:{:{},:{},:,:,:[{},{},{}]}}
+
+Invalid object - {{{},{},[{},{},]}}
+Explanation: Since the last element within the array consists a ',' which suggests an additional JSON object in the array.

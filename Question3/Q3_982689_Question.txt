@@ -1,0 +1,40 @@
+A thief decides to rob a jewellery store. He carries a gunny bag along with him that can only carry 'x' kgs of weight. When he enters the store, there are articles of various materials of different values and weights. Given a list of items and the cost of associated with these items and their respective weights, determine the items that the theif should prefer carrying along in a descending order of precedence such that they could help him make maximum profit.
+
+Constraints:
+1. Adding fractions of an item is not allowed
+2. Output must be in the same order as that of object insertion to the bag.
+3. Object names are unique
+4. An object can have negative cost, but it cannot have negative weight or a negative quantity.
+
+Note : Print -1 in case any of the constraints are not satisfied.
+
+Example:
+Consider Bag capacity = 22 kgs
+
+Object     Available Qty.   Weight of each unit in kgs       Cost
+  A          3               3            75
+  B        6               1            35
+  C        7                           2                        10
+  D          6               4            80
+
+Solution: -
+Sort the input in descending order of cost/weight     
+Object     Available Qty.   Weight of each unit in kgs       Cost
+  B        6              1             35
+  A           3              3             75
+  D         6             4             80
+  C        7                          2                          10
+
+Add the objects to the bag in the order of cost by weight that would provide maximum benefit
+6*B+3*A+1*D+1*C
+
+Sample Input:-
+22
+4
+A 3 3 75
+B 6 1 35
+C 7 2 10
+D 6 4 80
+
+Sample Output:-
+6B3A1D1C

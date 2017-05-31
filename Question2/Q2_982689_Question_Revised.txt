@@ -1,0 +1,29 @@
+Walter uses multiple applications at his workplace. He was assigned a unique password of variable lengths for each application (maximum length being 10). The only common factor among them was that all the passwords were a combination of 10 distinct characters. Walter created an algorithm to encode these passwords and wrote the codes on his desk to avoid a situation in which he would not be able to recollect a password.
+
+Given as an input is an encoded password and a list of 10 unique characters. Write a program that obtains the password by reverting the algorithm used by Walter.
+
+Algorithm used by Walter to encode his password is as follows:
+1. Walter observes all his passwords and lists down every distinct character. He assigns an index value to each character from 0 to 9. (Note: This list will be provided as an input to the program). This list MUST contain 10 DISTINCT characters.
+2. He then replaces every character in the password with the corresponding index value to convert the password to a 10 digit numeric value.
+3. The leftmost digit in this number sequence is noted; let's say 'A'.
+3. Now, starting from the leftmost position, every digit in the number is added to the digit on its right. The last digit in the sequence is added to 'A'.
+4. Step 3 provides a new sequences of numbers. He then scans through each of the summations and if any of the summation results in a value greater than 9, it is subtracted by 10, and its position is noted (Say B).
+5. He then lists every digit from 0 to 9 separated by '|' character and preappends each digit with its position in the sequence as noted in 'B'. The resulting sequence after this step is saved (Say C).
+6. The encoded password would therefore be <value_of_C>||<contents_of_array_B><Value_of_A>
+
+Decrypt the encoded password that has been created by Walter using the above algorithm to compute the actual password!
+
+Note: Print -1 if there is any error in the inputs.
+
+Format of input:
+Line 1 indicates the encoded password as it should be according to Walter's algorithm
+Line 2 indicates the 10 unique characters, not space-separated
+
+Example:-
+Input:
+60|1|92|823|104|5|76|7|58|439||012699 
+*Acf$Zd\T@
+
+
+Output :
+@Z@$Z$$d*f

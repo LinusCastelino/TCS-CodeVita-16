@@ -1,0 +1,47 @@
+Input:
+60|1|92|823|104|5|76|7|58|439||012699    (Encrypted password)
+*Acf$Zd\T@    (Input characters; It is a rule that the password will only contain these characters)
+
+Output :
+@Z@$Z$$d*f    (Password)
+
+
+
+###########################################################
+Explanatory example:-
+
+Steps used to encrypt the password:
+
+1. Consider input characters and its position 
+		Input character list 		:	* A c f $ Z d \ T @
+		Position			:	0 1 2 3 4 5 6 7 8 9
+(Note: The character list will not contain more than 10 characters and each character must be unique)
+
+2. Now replace the characters in the password with the position value of the respective character as defined in step 1, to convert the password into a numeric value.
+		Password 			:	@ Z @ $ Z $ $ d * f
+		Numeric value			:	9 5 9 4 5 4 4 6 0 3
+(Note : Remember left most value (Say A) = 9)
+
+3. Starting from the left most postion, add each digit to the digit on its right. Add the last digit with the first digit in the sequence
+		Numeric value of password	:	9    5    9    4    5    4    4    6    0    3
+		Addition 			:	  14   14    13   9    9    8    10   6    3    12
+
+4. For each addition result equal to or greater than 10, subtract it by 10 and note its position.
+		Additive step output		:	14   14    13   9    9    8    10   6    3    12
+		Selective subtraction		:	4    4     3    9    9    8    0    6    3    2
+		Selective subtraction position	:	0    1     2                   6              9
+(Note: Remember the selective subtraction step positions obtained (Say B) = 01269)
+
+5. The password will follow the following format
+		Format				:	0|1|2|3|4|5|6|7|8|9
+
+6. Now, each number in this format is pre-appended with the positions of the occurrence of the respective number in the output obtained in selective subtraction step of Step 4.
+		Coded password			:	60|1|92|823|104|5|76|7|58|439
+(Note: Say C = 60|1|92|823|104|5|76|7|58|439)
+
+7. The final encrypted password will be of the following format to account for the calculations performed in generating the encrypted password
+		Encrypted password (format)	:	<C>||<B><A>
+		Encrypted password		:	60|1|92|823|104|5|76|7|58|439||012699
+
+###################################################
+The above explanation is about how the encrypted password is obtained using the password and character list. The question that I submitted in CodeVita asks to revert this algorithm. The input will contain the encrypted password and the character list, and the expected output would be the password itself.

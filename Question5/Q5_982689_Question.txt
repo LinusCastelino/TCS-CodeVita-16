@@ -1,0 +1,25 @@
+Rule: Consider an 'x' digit number. List all the possible numbers in such a way that, the digit at a particular position must indicate the number-of-times its position value is repeated in the resulting number. 
+
+Note: If no output exists for the given input, print -1
+
+Example:-
+
+Consider x=4
+
+Answer :     1   2   1   0
+
+             --  --  --  --
+
+Position :   0   1   2    3  
+
+The number 1210 indicates that the number 0 (position 0) is repeated 1 time in the answer, the number 1 (position 1) is repeated 2 times in the answer, the number 2 (position 2) is repeated 1 time in the answer and the number 3 (position 3) is repeated 0 times in the answer.
+
+Another answer for x=4 will be 2020, which satisfies the rule.
+
+
+Sample Input:
+4
+
+Sample Output:
+1210
+2020

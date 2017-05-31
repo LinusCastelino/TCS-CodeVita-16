@@ -1,0 +1,22 @@
+Walter uses multiple applications at his workplace. He was assigned a unique password of variable lengths for each application (maximum length being 10). The only common factor among them was that all the passwords were a combination of 10 distinct characters. Walter created an algorithm to encode these passwords and wrote the codes on his desk to avoid a situation in which he would not be able to recollect a password.
+
+Given is a list of 10 different characters and a code. Write a program that obtains the password by reverting the algorithm used by Walter.
+
+Algorithm used by Walter to encode his password is as follows:
+1. Walter observes all his passwords and lists down every distinct character. He assigns an index value to each character from 0 to 9. (Note: This list will be provided as an input to the program). This list MUST contain 10 DISTINCT characters.
+2. He then replaces every character in the password with the corresponding index value. This would convert the password to a numeric value.
+3. The leftmost digit in this number sequence is noted and saved. (Say A)
+3. Now, starting from the leftmost position, every digit in the number is added to the digit on its right. The last digit in the sequnce is added to the original value of the first digit.
+4. If the summation results in a value greater than 9, it is subtracted by 10, and its position is noted in an array (Say B).
+5. He then lists every digit from 0 to 9 separated by '|' character and preappends each digit with its position in the sequence obtained in step 4. The resulting sequnce after this step is saved (Say C).
+6. The encoded password would therefore be <value_of_c>||<contents_of_array_B><Value_of_A>
+
+Note: Print -1 if there is any error in the inputs.
+
+Example:-
+Input:
+60|1|92|823|104|5|76|7|58|439||012699 
+*Acf$Zd\T@
+
+Output :
+@Z@$Z$$d*f

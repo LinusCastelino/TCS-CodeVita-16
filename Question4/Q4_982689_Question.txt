@@ -1,0 +1,42 @@
+Question Name:
+Calculate the longest possible route
+
+Question Text:
+Given an MxN matrix, with a few hurdles arbitrarily placed, calculate the cost of longest possible route from point A to point B within the matrix.
+
+Note: 
+
+1.The cost from one position to another will be 1 unit. 
+
+2. A location once visited in a particular path cannot be visited again.
+
+3. A route will only consider adjacent hops. The route cannot consist of diagonal hops.
+
+4. The position with a hurdle cannot be visited.
+
+5. The values MxN signifies that the matrix consists of rows ranging from 0 to M-1 and and columns ranging from 0 to N-1.
+
+6. If the dest is not reachable or src/dest overlap with hurdles, print cost as -1.
+
+Example:
+
+Consider a 3x4 martix with a hurdle at (2,2). Consider A(2,3) and B(0,1)
+
+Input:
+
+3 4
+
+1                        --(no. of hurdles ) 
+
+2 2
+
+2 3                     -- (position of A)
+
+0 1                      -- (postion of B)
+
+
+
+Output :
+
+10
+
