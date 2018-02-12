@@ -1,4 +1,4 @@
-# TCS_CodeVita
+# TCS-CodeVita-16
 
 Problem statements and corresponding solutions created for TCS CodeVita 16
 
